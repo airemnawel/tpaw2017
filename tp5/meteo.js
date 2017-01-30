@@ -11,7 +11,7 @@ function searchCity(_city){
     //A compléter dans la suite du TP
     
     var request =   new XMLHttpRequest();
-    request.open('GET','http://api.openweathermap.org/data/2.5/weather?q='+_city+'&appid=0ada432b59deb9716c357092c5f79be6',true);
+    request.open('GET','https://demo.bilelz.fr/owmap/?q='+_city+'&appid=0ada432b59deb9716c357092c5f79be6',true);
     request.onload = function() {
         if (request.status >=200 && request.status <400) {
             // Success!
@@ -22,7 +22,7 @@ function searchCity(_city){
             var cloud = responseJSON.clouds.all;
             var wind = responseJSON.wind.speed;
             var icon = responseJSON.weather[0].icon;
-            var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="+responseJSON.name +"&zoom=13&size=300x300&maptype=roadmap&markers="+responseJSON.name +"";
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+responseJSON.name +"&zoom=13&size=300x300&maptype=roadmap&markers="+responseJSON.name +"";
             
           document.getElementById("map").innerHTML = '<img src="'+img_url+'"/>';
           
